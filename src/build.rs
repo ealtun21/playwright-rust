@@ -70,14 +70,12 @@ fn size(p: &Path) -> u64 {
 fn download(_url: &str, dest: &Path) { File::create(dest).unwrap(); }
 
 fn url(platform: PlaywrightPlatform) -> String {
-    // let next = DRIVER_VERSION
+ 
     //    .contains("next")
     //    .then(|| "/next")
     //    .unwrap_or_default();
-    format!(
-        "https://playwright.azureedge.net/builds/driver/playwright-{}-{}.zip",
-        DRIVER_VERSION, "mac-arm64"
-    )
+    "https://playwright.azureedge.net/builds/driver/playwright-1.55.0-mac-arm64.zip".into()
+    
 }
 
 #[derive(Clone, Copy)]

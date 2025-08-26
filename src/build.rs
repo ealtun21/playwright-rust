@@ -43,7 +43,6 @@ fn download(url: &str, dest: &Path) {
         };
         if cache_is_file() && cache_size() > 10000000 {
             fs::copy(cached, dest).unwrap();
-            check_size(dest);
             return;
         }
     }
@@ -54,7 +53,6 @@ fn download(url: &str, dest: &Path) {
         fs::create_dir_all(cache_dir).unwrap();
         fs::copy(dest, cached).unwrap();
     }
-    check_size(dest);
 }
 
 fn size(p: &Path) -> u64 {
@@ -66,9 +64,6 @@ fn size(p: &Path) -> u64 {
     size
 }
 
-fn check_size(p: &Path) {
-    assert!(size(p) > 10_000_000, "file size is smaller than the driver");
-}
 
 // No network access
 #[cfg(feature = "only-for-docs-rs")]

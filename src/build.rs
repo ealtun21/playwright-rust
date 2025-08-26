@@ -74,10 +74,9 @@ fn url(platform: PlaywrightPlatform) -> String {
     //    .contains("next")
     //    .then(|| "/next")
     //    .unwrap_or_default();
-    let next = "/next";
     format!(
-        "https://playwright.azureedge.net/builds/driver{}/playwright-{}-{}.zip",
-        next, DRIVER_VERSION, platform
+        "https://playwright.azureedge.net/builds/driver/playwright-{}-{}.zip",
+        DRIVER_VERSION, platform
     )
 }
 

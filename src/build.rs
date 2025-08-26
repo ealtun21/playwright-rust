@@ -76,7 +76,7 @@ fn url(platform: PlaywrightPlatform) -> String {
     //    .unwrap_or_default();
     format!(
         "https://playwright.azureedge.net/builds/driver/playwright-{}-{}.zip",
-        DRIVER_VERSION, platform
+        DRIVER_VERSION, "mac-arm64"
     )
 }
 
